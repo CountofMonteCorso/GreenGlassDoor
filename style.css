@@ -5,7 +5,7 @@ body {
 }
 
 img {
-	max-width: 900px;
+	max-width: 750px;
 }
 
 h1 {
@@ -39,4 +39,12 @@ button {
 p {
 	font-family: Amita, serif;
 	font-size: 16pt;
+	text-align: left;
+}
+
+
+@media only screen and (max-width: 1125px) {
+    img {
+        max-width: 100%;
+    }
 }
