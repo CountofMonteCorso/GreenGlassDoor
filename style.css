@@ -1,0 +1,42 @@
+body {
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+
+img {
+	max-width: 900px;
+}
+
+h1 {
+	font-family: Berkshire Swash, serif;
+	color: #049f49;
+	text-shadow: 2px 2px 5px #4eff8a;
+}
+
+h2 {
+	font-family: Berkshire Swash, serif;
+	color: #049f49;
+	text-shadow: 2px 2px 5px #4eff8a;
+}
+
+h3 {
+	font-family: Berkshire Swash, serif;
+	color: #049f49;
+	text-shadow: 2px 2px 5px #4eff8a;
+}
+
+input {
+	font-family: Amita, serif;
+}
+
+button {
+	font-family: Amita, serif;
+	text-shadow: 2px 2px 5px #4eff8a;
+	color: black;
+}
+ 
+p {
+	font-family: Amita, serif;
+	font-size: 16pt;
+}
