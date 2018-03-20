@@ -48,7 +48,9 @@
 
     	$("#formID").on("submit", function(event) {
     		event.preventDefault();
-    		var userInput = document.getElementById("input");
+    		var userInput = document.getElementById("input").value;
+
+    		console.log("this is the userInput " + userInput);
 
     		function hasRepeatedLetters(str) {
 	    		var patt = /^([a-z])\1+$/;
@@ -56,9 +58,12 @@
 	   				return result;
 	   		}
 
-	   		var result = hasRepeatedLetters(userInput);
+	   		var check = hasRepeatedLetters(userInput);
+	   		console.log("this is the check" + check);
+	   		console.log("this is the result " + result);
+	   		console.log("this is str " + str);
 
-    		if (result === true) {
+    		if (check === true) {
     			alert("Thank you. You may pass.");
 	   		}
 
