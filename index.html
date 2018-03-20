@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<!--jQuery CDN -->
+  	<script
+  		src="https://code.jquery.com/jquery-3.3.1.js"
+  		integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  		crossorigin="anonymous"></script>
+
 	<!-- Compiled and minified CSS -->
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
@@ -13,6 +19,8 @@
   	<link href="https://fonts.googleapis.com/css?family=Amita" rel="stylesheet">
 
   	<link rel="stylesheet" href="style.css">
+
+
 
 	<title>The Green Glass Door</title>
 </head>
@@ -28,12 +36,41 @@
 			</br>
 		What criteria? That's up to you to figure out. Once you've done so, you will be able to safely pass through my frame at will.  
 		</p>
-		<form>
+		<form id="formID">
 			<h3> What have you brought me? </h3>
 			<input placeholder="Go on now, don't be shy..." id="input"> 
 			</input>
 			<button class="waves-effect waves-light btn #049f49 green accent-3" type="submit" name="action"> Submit </button>
 		</form>
 	</div>
+
+	<script type="text/javascript">
+
+    	$("#formID").on("submit", function(event) {
+    		event.preventDefault();
+    		var userInput = document.getElementById("input");
+
+    		function hasRepeatedLetters(str) {
+	    		var patt = /^([a-z])\1+$/;
+	   			var result = patt.test(str);
+	   				return result;
+	   		}
+
+	   		var result = hasRepeatedLetters(userInput);
+
+    		if (result === true) {
+    			alert("Thank you. You may pass.");
+	   		}
+
+	   		else {
+	   			alert("This is unacceptable but you may try again.");
+	   		}
+	   	});
+
+   	</script>
 </body>
+
+<footer>
+	© Kevin Corso 2018
+</footer>
 </html>

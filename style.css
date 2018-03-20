@@ -42,6 +42,13 @@ p {
 	text-align: left;
 }
 
+footer {
+	margin-top: 15%;
+	text-align: center;
+	font-family: Berkshire Swash, serif;
+	color: #049f49;
+}
+
 
 @media only screen and (max-width: 1125px) {
     img {
