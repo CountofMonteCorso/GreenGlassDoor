@@ -39,11 +39,7 @@ h1 {
 	text-shadow: 0.5rem 0.1rem .4rem #02632e;
 }
 
-h2 {
-	font-family: Berkshire Swash, serif;
-	color: #049f49;
-	text-shadow: 2px 2px 5px #4eff8a;
-}
+
 
 .intro {
 	background-color: rgba(0, 0, 0, 0.6);
@@ -203,6 +199,31 @@ span {
 	  animation-delay: #{(3 + ($item/10))}s; 
 	}
   } 
+
+	.row {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		width: 100%;
+
+		margin-top: 2rem;
+	}
+	
+	.column {
+		display: flex;
+		flex-direction: column;
+		flex-basis: 100%;
+		flex: 1;
+
+		background-color: rgba(0, 0, 0, 0.75);
+		box-shadow: 0 1rem 1rem rgba(0,0,0,0.9);
+
+		font-family: Berkshire Swash, serif;
+		font-size: 1.2rem;
+		color: #049f49;
+		text-shadow: 2px 2px 8px #02632e;
+		margin: 0 2rem;
+	}
 
 @media only screen and (max-width: 1125px) {
     img {
