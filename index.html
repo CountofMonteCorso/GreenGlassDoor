@@ -1,17 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!--jQuery CDN -->
-  	<script
-  		src="https://code.jquery.com/jquery-3.3.1.js"
-  		integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  		crossorigin="anonymous"></script>
-
-	<!-- Compiled and minified CSS -->
-  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-
-  	<!-- Compiled and minified JavaScript -->
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  	<script src="index.js"></script>
 
   	<!--Berkshire Swash -->
   	<link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
@@ -26,56 +16,30 @@
 </head>
 <body>
 	<div class="container">
-		<h1> The Green Glass Door </h1>
-		<img src="door.jpg" />
-		<p> Greetings, traveler.  I am indeed the infamous Green Glass Door. Through me, you can travel to anywhere your imagination would take you.
-			</br>
-		However, one does not simply walk through magical interdimensional portals indiscriminately.  You must first bring me gifts.
-			</br>
-		But I will not accept just any gift. Only certain objects that meet a specific criteria will be permitted.
-			</br>
-		What criteria? That's up to you to figure out. Once you've done so, you will be able to safely pass through my frame at will.  
-		</p>
-		<form id="formID">
+		<h1> 
+			<span>T</span><span>h</span><span>e</span><span>&nbsp;</span><span>G</span><span>r</span><span>e</span><span>e</span><span>n</span><span>&nbsp;</span><span>G</span><span>l</span><span>a</span><span>s</span><span>s</span><span>&nbsp;</span><span>D</span><span>o</span><span>o</span><span>r</span>
+		</h1>
+		<div class="intro">
+			<div class="intro-img"></div>
+			<div class="intro-text">
+				<p> Greetings, traveler.  I am indeed the infamous Green Glass Door. Through me, you can travel to anywhere your imagination would take you.</p>
+				<p>However, one does not simply walk through magical interdimensional portals indiscriminately.  You must first bring me gifts so that I may know you are worthy.</p>
+				<p>But I will not accept just any gift. Only certain objects that meet a specific criteria will be permitted.</p>
+				<p>What criteria? That's up to you to figure out. Once you've done so, you will be able to safely pass through my frame at will.  
+				</p>
+			</div>
+		</div>
+		<form id="formID" onsubmit="check()">
 			<h3> What have you brought me? </h3>
 			<input placeholder="Go on now, don't be shy..." id="input"> 
 			</input>
-			<button class="waves-effect waves-light btn #049f49 green accent-3" type="submit" name="action"> Submit </button>
+			<button class="grow pulsate" type="submit" name="action"> Submit </button>
 		</form>
 	</div>
 
-	<script type="text/javascript">
-
-    	$("#formID").on("submit", function(event) {
-    		event.preventDefault();
-    		var userInput = document.getElementById("input").value;
-
-    		console.log("this is the userInput " + userInput);
-
-    		function hasRepeatedLetters(str) {
-	    		var patt = /^([a-z])\1+$/;
-	   			var result = patt.test(str);
-	   				return result;
-	   		}
-
-	   		var check = hasRepeatedLetters(userInput);
-	   		console.log("this is the check" + check);
-	   		console.log("this is the result " + result);
-	   		console.log("this is str " + str);
-
-    		if (check === true) {
-    			alert("Thank you. You may pass.");
-	   		}
-
-	   		else {
-	   			alert("This is unacceptable but you may try again.");
-	   		}
-	   	});
-
-   	</script>
 </body>
 
 <footer>
-	© Kevin Corso 2018
+	© Kevin Corso 2018-2019
 </footer>
 </html>

@@ -1,17 +1,42 @@
+@import "compass/css3";
+
 body {
-	background-color: black;
-	color: white;
+	background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+	background-size: cover;
+	background-repeat: no-repeat;
+  background-attachment: fixed;
+	/* color: transparent; */
+
+	/* background-color: black; */
+	color: green;
+	line-height: 1.5;
 	text-align: center;
 }
 
+.door {
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+	align-content: center;
+	box-shadow: inset 0 0 200px rgba(0,0,0,0.9);
+	position: relative;
+	text-align: center;
+	z-index: 1;
+}
+
 img {
-	max-width: 750px;
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 h1 {
 	font-family: Berkshire Swash, serif;
 	color: #049f49;
-	text-shadow: 2px 2px 5px #4eff8a;
+	margin: 0;
+	text-shadow: 0.5rem 0.1rem .4rem #02632e;
 }
 
 h2 {
@@ -20,26 +45,98 @@ h2 {
 	text-shadow: 2px 2px 5px #4eff8a;
 }
 
+.intro {
+	background-color: rgba(0, 0, 0, 0.6);
+	box-shadow: 0 1rem 1rem rgba(0,0,0,0.9);
+	overflow: auto;
+	position: relative;
+	-webkit-text-stroke-width: .4px;
+	-webkit-text-stroke-color: black;
+}
+
+.intro-img{
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	background-image: url("door.jpg");
+	background-position: center;
+	background-size:cover;
+	opacity: 0.8;
+	z-index:1;
+	-webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);	
+}
+
+.intro-text{
+	position: relative;
+	z-index: 2;
+}
+
+form {
+	background-color: rgba(0, 0, 0, 0.75);
+	box-shadow: 0 1rem 1rem rgba(0,0,0,0.9);
+}
 h3 {
+	
 	font-family: Berkshire Swash, serif;
+	font-size: 2rem;
 	color: #049f49;
-	text-shadow: 2px 2px 5px #4eff8a;
+	text-shadow: 2px 2px 8px #02632e;
 }
 
 input {
+	background-color:transparent;
+	border: none;
+	border-bottom: .2rem solid green;
+	color:white;
 	font-family: Amita, serif;
+	font-size: 1.2rem;
+	margin-bottom: 1rem;
+	width: 100%;
+}
+input:focus{
+	outline:none;
 }
 
 button {
+	background-color:#049f49;
+	border: none;
 	font-family: Amita, serif;
-	text-shadow: 2px 2px 5px #4eff8a;
+	font-size: 1.2rem;
+	margin-bottom: 2rem;
+	text-shadow: 2px 2px 5px  #013f1d;
 	color: black;
+	width: 25%;
+}
+
+button:active{
+	-webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        transform: scale(0.8);
 }
  
 p {
 	font-family: Amita, serif;
+	padding-bottom: 1.5rem;
 	font-size: 16pt;
-	text-align: left;
+	text-align: center;
+}
+
+.pulsate {
+		-webkit-animation: pulsate 2s ease-out;
+		-webkit-animation-iteration-count: infinite; 
+		opacity: 0.5;
+}
+.grow { 
+	transition: all .2s ease-in-out; 
+}
+.grow:hover { 
+	transform: scale(1.1); 
 }
 
 footer {
@@ -49,6 +146,63 @@ footer {
 	color: #049f49;
 }
 
+@-webkit-keyframes pulsate {
+	0% { 
+		opacity: 0.5;
+	}
+	50% { 
+		opacity: 1.0;
+	}
+	100% { 
+		opacity: 0.5;
+	}
+}
+
+span {
+	display: inline-block;
+	font-size: 5rem;
+	text-shadow: 0.5rem 0.1rem .4rem #02632e;
+	animation: smoky 5s 3s both;
+  }
+  
+  span:nth-child(even){
+	animation-name: smoky-mirror;
+  }
+  
+  @keyframes smoky {
+	60% {
+	  text-shadow: 0 0 40px green;
+	}
+	to {
+	  transform:
+		translate3d(15rem,-8rem,0)
+		rotate(-40deg)
+		skewX(70deg)
+		scale(1.5);
+	  text-shadow: 0 0 20px green;
+	  opacity: 0;
+	}
+  }
+  
+  @keyframes smoky-mirror {
+	60% {
+	  text-shadow: 0 0 40px green; }
+	to {
+	  transform:
+		translate3d(18rem,-8rem,0)
+		rotate(-40deg) 
+		skewX(-70deg)
+		scale(2);
+	   text-shadow: 0 0 20px green;
+	  opacity: 0;
+	}
+  }
+  
+  @for $item from 1 through 20 {
+	span:nth-of-type(#{$item}){ 
+	  animation-delay: #{(3 + ($item/10))}s; 
+	}
+  } 
 
 @media only screen and (max-width: 1125px) {
     img {
